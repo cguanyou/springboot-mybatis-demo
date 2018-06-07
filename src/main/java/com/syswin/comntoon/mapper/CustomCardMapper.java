@@ -3,7 +3,6 @@ package com.syswin.comntoon.mapper;
 import org.apache.ibatis.annotations.Mapper;
 
 import com.syswin.comntoon.model.CustomCard;
-import com.syswin.comntoon.model.User;
 
 @Mapper
 public interface CustomCardMapper {
