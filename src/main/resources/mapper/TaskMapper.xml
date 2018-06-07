@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">  
+  
+<!-- 指定工作空间，要与接口名相同，源代码没有去看，猜测应该是通过"这里的namespace.下边方法的id"来定位方法的 -->  
+<mapper namespace="com.syswin.comntoon.mapper.TaskMapper">  
+
+    <!-- insert user -->
+    <insert id = "insert"  parameterType="com.syswin.comntoon.model.Task" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO TASK(CATEGORY,RESULT,BPNAME) VALUES(#{category},#{result},#{bpName})
+    </insert>
+    
+    <!-- update user -->
+    <update id="update" parameterType="com.syswin.comntoon.model.Task">
+        UPDATE TASK SET RESULT=#{result} WHERE ID=#{id}
+    </update>
+    
+    <!-- find user -->
+    <select id="find"  resultType="com.syswin.comntoon.model.Task">
+        SELECT ID,CATEGORY,RESULT,BPNAME FROM TASK 
+    </select>
+    
+    <select id="findbyid"  resultType="com.syswin.comntoon.model.Task">
+        SELECT ID,CATEGORY,RESULT,BPNAME FROM TASK WHERE ID=#{id}
+    </select>
+    
+    <select id="findbyresult"  resultType="com.syswin.comntoon.model.Task">
+        SELECT ID,CATEGORY,RESULT,BPNAME FROM TASK WHERE RESULT=#{result}
+    </select>
+    
+    
+    
+    <!-- delete user -->
+    <delete id="delete">
+        DELETE FROM TASK WHERE ID=#{id}
+    </delete>
+</mapper>

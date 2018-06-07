@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>coffeebank-demo-jenkinstest</title>
+    <script th:src="@{/comntoon/jquery/jquery-1.11.3.js}"></script>
+    <script type="text/javascript" th:src="@{/comntoon/coffeebankdemo/js/coffeebank.js}"></script>
+</head>
+<body>
+<h1>Hello CoffeeBank Demo!!!</h1>
+<p th:text="${coffee}"></p>
+<p id="check" style="visibility: hidden;">联网核查失败，请联系金融顾问</p>
+
+
+<p id="checkfail" style="visibility: hidden;">导服授权失败</p>
+
+<div id="shuazheng" style="display:none;">
+<p id="biaoti">请刷身份证</p>
+<input id="customcard" onblur="checkcard(this)" type="text" ></input>
+</div>
+
+
+<div id="shuaka" style="display:none;">
+<p id="biaoti1" >请刷卡</p>
+<input id="card1" onblur="card(this)" type="text" ></input>
+</div>
+
+
+<div id="yanmi" style="display:none;">
+	<p id="biaoti1" >请刷卡</p>
+	<input id="card2" onblur="yue(this)" type="text" ></input>
+	<span id="mimayue">余额为：</span>
+	<p id="biaoti1" >请输入密码</p>
+	<input id="card3" onblur="mima(this)" type="password" ></input>
+	<button id="mimabu" type="button" onclick="mimasubmit(this)" >提交</button>
+</div>
+
+
+<div id="jieguo" style="display:none;">
+	<table id="jieguotab" border="1">
+		<tr>
+			<th>功能名称</th>
+			<th>姓    名</th>
+			<th>交易金额</th>
+			<th>交易状态</th>
+			<th>详    情</th>
+		</tr>
+	</table>
+</div>
+
+
+<div id="luru" style="display:none;"> 
+<label>客户姓名:</label>
+<input type="text" id="name" disabled="disabled" ></input>
+<label>客户账号:</label>
+<input type="text" id="cardno" disabled="disabled" ></input>
+<label>开户金额:</label>
+<input type="text"></input>
+<label>存   期:</label>
+<select>
+	<option>三个月</option>
+	<option>半年</option>
+	<option>一年</option>
+	<option>两年</option>
+	<option>三年</option>
+	<option>五年</option>
+</select>
+<button id="lurubu" type="button" onclick="lurusubmit(this)" >提交</button>
+</div>
+
+<button id="opencard" type="button" value="1" onclick="submit(this)" >我要开户-卡下挂定期</button>
+</body>
+</html>
