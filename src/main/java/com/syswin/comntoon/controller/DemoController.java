@@ -19,7 +19,7 @@ public class DemoController {
     @RequestMapping("/coffeebank")
     public String helloHtml(HashMap<String, Object> map) {
     	System.out.println("ssssss");
-        map.put("coffee", "欢迎进入咖啡银行启动页面"+"jenkins~~~~~~~~!!!!!!");
+        map.put("coffee", "欢迎进入咖啡银行启动页面"+"jenkins");
         return "/comntoon/coffeebankdemo/coffeebankindex";
     }
     
